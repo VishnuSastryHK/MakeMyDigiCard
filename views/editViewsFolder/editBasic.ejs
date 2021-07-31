@@ -1,0 +1,138 @@
+<HTML>
+    <head>
+        <title>Editing Basic Details</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/editViews.css">
+        
+    </head>
+    
+      <!--% var variable = card %-->
+      
+      <body>
+      <%- include('../partials/dashboard.ejs') %>
+      <div class="content">
+            <div class="testbox">
+              <form id="usrform" action="/formSubmissions/formDataBasic/<%= card.id %>?_method=PUT" method="POST" autocomplete="off">              
+                <div class="formContainer">
+                  <div class="container">
+                    <h3>Business Details</h3>
+                    <hr>
+                    <br>
+                    
+                    <div class="item">
+                      <p>Business Name</p><br>
+                      <input type="text" name="businessName" value="<%= card.businessName %> "/>
+                    </div>
+                   
+                  <div class="item">
+                    <p>Business Logo/Profile</p><br>
+                    <img src="login.jpg" height="200px">
+                  </div>
+                  <div class="item">
+                    <div class="name-item">
+                        <p>Change Logo/Profile?</p>
+                        </div>
+                        <br>
+                        <div class="name-item">
+                        <input type="file" name="businessLogo" accept="file/*">
+                    </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="formContainer">
+                <div class="container">
+                  <h3>User Details</h3>
+                  <hr>
+                  <br>
+                  
+                  <div class="item">
+                    <p>Name</p><br>
+                    <input type="text" name="name" value="<%= card.name%>"/>
+                  </div>
+                  <div class="item">
+                    <p>Qualification</p><br>
+                    <input type="text" name="qualification" value="<%= card.qualification %>"/>
+                  </div>
+                  <div class="item">
+                    <p>Designation</p><br>
+                    <input type="text" name="designation" value="<%= card.designation %>"/>
+                  </div>
+                
+                
+                <div class="item">
+                  <p>Profile</p><br>
+                  <img src="login.jpg" height="200px">
+                </div>
+                <div class="item">
+                  <div class="name-item">
+                      <p>Change Profile?</p>
+                      </div>
+                      <br>
+                      <div class="name-item">
+                      <input type="file" name="profile" accept="file/*">
+                  </div>
+              </div>
+              </div>
+            </div>
+            <div class="formContainer">
+                <div class="container">
+                  <h3>Contact Details</h3>
+                  <hr>
+                  <br>
+                  
+                  <div class="item">
+                    <p>Phone Number</p><br>
+                    <input type="text" name="phoneNo" value="<%= card.phoneNo %>"/>
+                  </div>
+                  <div class="item">
+                    <p>Whatsapp Number</p><br>
+                    <input type="text" name="whatsappNo" value="<%= card.whatsappNo %>"/>
+                  </div>
+                  <div class="item">
+                    <p>Email</p><br>
+                    <input type="text" name="email" value="<%= card.email %>"/>
+                  </div>
+              </div>
+            </div>
+            <div class="formContainer">
+              <div class="container">
+                <h3>Address</h3>
+                <hr>
+                <br>
+                <div class="item">
+                  <p>Address</p><br>
+                  <input type="text" name="address" value="<%= card.address %>"/>
+                </div>
+                <div class="item">
+                  <p>Location Link</p><br>
+                  <input type="text" name="locationLink" value="<%= card.locationLink %>"/>
+                </div>
+                <div class="item">
+                  <p>Website Link</p><br>
+                  <input type="text" name="websiteLink" value="<%= card.websiteLink %>"/>
+                </div>
+            </div>
+          </div>
+                      
+                
+                
+                <div class="btn-block left-btn">
+                  <button href="/">Cancel</button>
+                </div>
+
+                <div class="btn-block right-btn">
+                  <button type="submit" href="/formSubmissions/formDataBasic/<%=card.id%>">Save</button>
+                </div>
+              </form>
+            </div>
+      </div>
+      
+    </body>
+    <script>sessionStorage.setItem('keyInDashboard', 'Basic');</script>
+    <!--script type="text/javascript">
+      let myVar = <--%=card %>;
+    </!--script>
+    <script-- src="/js/dashboard.js"></script-->
+</HTML>
